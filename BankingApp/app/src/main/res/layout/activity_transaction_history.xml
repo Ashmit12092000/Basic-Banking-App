@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/main_custom_toolbar"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize" android:id="@+id/toolbar2"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" tools:layout_editor_absoluteY="3dp"
+                tools:layout_editor_absoluteX="16dp">
+
+
+            <ImageView
+                    android:layout_width="33dp"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/back" android:id="@+id/back"
+                    android:layout_weight="1"
+                    app:tint="#FFFFFF" android:layout_gravity="center"/>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="199dp"
+                    android:layout_height="50dp" tools:layout_editor_absoluteY="1dp"
+                    tools:layout_editor_absoluteX="207dp" android:gravity="center" android:layout_marginTop="20dp">
+                <TextView
+                        android:layout_width="184dp"
+                        android:layout_height="wrap_content" android:id="@+id/name_user"
+                        android:textSize="18sp" android:textColor="#FFFFFF" android:textStyle="bold"
+                        android:text="Transaction History"/>
+                <TextView
+                        android:text="online"
+                        android:layout_width="155dp"
+                        android:layout_height="1dp" android:id="@+id/status_user"
+                        android:textColor="#FFFFFF"
+                        android:visibility="gone" android:layout_weight="1"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="10dp"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/transfer_history_list"
+            android:layout_marginEnd="2dp" android:layout_marginRight="2dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar2" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    <TextView
+            android:id="@+id/empty_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No history"
+            android:layout_centerInParent="true"
+            android:textColor="#000"
+            android:textSize="15dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="@+id/recyclerview"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.447"
+            android:layout_marginBottom="396dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

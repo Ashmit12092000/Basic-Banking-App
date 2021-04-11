@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/main_custom_toolbar"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize" android:id="@+id/toolbar"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" tools:layout_editor_absoluteY="3dp"
+                tools:layout_editor_absoluteX="16dp">
+
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="199dp"
+                    android:layout_height="50dp" tools:layout_editor_absoluteY="1dp"
+                    tools:layout_editor_absoluteX="207dp" android:gravity="center" android:layout_marginTop="20dp">
+                <TextView
+                        android:layout_width="184dp"
+                        android:layout_height="wrap_content" android:id="@+id/name_user"
+                        android:textSize="18sp" android:textColor="#FFFFFF" android:textStyle="bold"
+                        android:text="Citizen  Bank of India"/>
+                <TextView
+                        android:text="online"
+                        android:layout_width="155dp"
+                        android:layout_height="1dp" android:id="@+id/status_user"
+                        android:textColor="#FFFFFF"
+                        android:visibility="gone" android:layout_weight="1"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh"
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="0dp"
+                android:layout_height="0dp" android:id="@+id/recyclerviewf"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="6dp"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/userslist"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
